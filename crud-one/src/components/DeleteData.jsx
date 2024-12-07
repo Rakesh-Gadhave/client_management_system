@@ -8,7 +8,7 @@ const DeleteData = () => {
 
   const delcli = async () => {
     try {
-      await axios.delete(`http://localhost:3000/client${clientId}`)
+      await axios.delete(`http://localhost:3000/client/${clientId}`)
       alert("data deleted succesfully")
       navigate('/clientdetails')
     } catch (e) {
@@ -16,12 +16,10 @@ const DeleteData = () => {
     }
   }
 
-
-
-
+  
   return (
 
-    <div>
+    <div style={{height : "100vh"}}>
       <div className='w-50 mx-auto bg-warning mt-5 rounded-4'>
         <div className='p-5'>
           <h1>Do you want to remove the client Details from the back end?</h1>

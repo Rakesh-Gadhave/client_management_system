@@ -6,6 +6,7 @@ import UpdateData from './UpdateData';
 
 const ClientDetails = () => {
     const [saveData, setSaveData] = useState([]);
+    const [searchInput ,setSearchInput] = useState('')
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -14,6 +15,7 @@ const ClientDetails = () => {
                 const response = await axios.get('http://localhost:3000/client')
                 const result = response.data
                 setSaveData(result)
+
             } catch (e) {
                 console.log("error ", e)
             }
@@ -29,10 +31,22 @@ const ClientDetails = () => {
         navigate(`/deletedata/${clientId}`)
     }
 
+    const fetchClientData = saveData.filter((cli)=>{
+       return cli.role.toLowerCase().includes( searchInput.toLowerCase()) 
+    })
+      
+
     return (
-        <div>
+        <div style={{height : "100vh"}}>
             <h1 className='mt-5'>Client Details</h1>
-            <table className='table w-75 mt-5 bg-dark mx-auto
+
+            <input type="text" 
+                className='form-control mt-5 w-50 mx-auto'
+                placeholder='Search Role here'
+                onChange={(e)=>{setSearchInput(e.target.value)}}
+            />
+
+            <table className='table w-100 mt-5 bg-dark mx-auto
             '>
                 <thead>
                     <tr>
@@ -48,7 +62,7 @@ const ClientDetails = () => {
                 </thead>
                 <tbody>
                     {
-                        saveData.map((clients, index) => {
+                        fetchClientData.map((clients, index) => {
                             return (
                                 <tr key={index}>
                                     <td>{index + 1}</td>

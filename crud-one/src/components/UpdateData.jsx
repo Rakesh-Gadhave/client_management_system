@@ -24,12 +24,12 @@ const UpdateData = () => {
     }
     useEffect(() => {
         getData()
-    }, [stdId])
+    }, [clientId])
 
     const saveData = async (data) => {
         try {
-            await axios.put(`http://localhost:3000/client${clientId}`, data);
-            alert('Data is Updated'); navigate('/studentdetails');
+            await axios.put(`http://localhost:3000/client/${clientId}`, data);
+            alert('Data is Updated'); navigate('/clientdetails');
         } catch (error) {
             console.error('Error updating data:', error);
         }
@@ -48,7 +48,7 @@ const UpdateData = () => {
                                 <div className="card-body p-4 p-md-5">
                                     <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
 
-                                    <form className="px-md-2" onSubmit={handleSubmit(submitForm)}>
+                                    <form className="px-md-2" onSubmit={handleSubmit(saveData)}>
 
                                         <div data-mdb-input-init className="form-outline mb-4">
                                             <input type="text" id="form3Example1q" className="form-control" {...register("client_Name")} required/>
@@ -71,10 +71,9 @@ const UpdateData = () => {
                                             <label className="form-label" htmlFor="form3Example1q">Role</label>
                                         </div>
 
-                                        <input type="submit"
-                                         data-mdb-button-init data-mdb-ripple-init 
-                                         className="btn btn-success btn-lg mb-1"
-                                        />
+                                        <button type='submit'
+                                            className="btn btn-success btn-lg mb-1"
+                                        >Update</button>
 
                                     </form>
 

@@ -8,6 +8,7 @@ const ClientForm = () => {
 
     const submitForm = async(data) => {
         await axios.post('http://localhost:3000/client', data)
+        alert("Data submitted successfully")
         reset()
     }
 
@@ -32,11 +33,11 @@ const ClientForm = () => {
                                         </div>
                                         <div data-mdb-input-init className="form-outline mb-4">
                                             <input type="text" id="form3Example1q" className="form-control" {...register("company_Name")} required/>
-                                            <label className="form-label" htmlFor="form3Example1q">Name</label>
+                                            <label className="form-label" htmlFor="form3Example1q">Company Name</label>
                                         </div>
                                         <div data-mdb-input-init className="form-outline mb-4">
-                                            <input type="text" id="form3Example1q" className="form-control" {...register("email")} required/>
-                                            <label className="form-label" htmlFor="form3Example1q">Name</label>
+                                            <input type="email" id="form3Example1q" className="form-control" {...register("email")} required/>
+                                            <label className="form-label" htmlFor="form3Example1q">Email</label>
                                         </div>
                                         <div data-mdb-input-init className="form-outline mb-4">
                                             <input type="number" id="form3Example1q" className="form-control" {...register("contact")} required/>

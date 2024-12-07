@@ -1,15 +1,28 @@
 {
   "client": [
     {
-      "id": "1"
+      "id": "abfc",
+      "client_Name": "Rakesh",
+      "company_Name": "Bumble Dumble",
+      "email": "bumbleDumble@gmail.com",
+      "contact": "7851226654",
+      "role": "CEO"
     },
     {
-      "id": "350f",
-      "client_Name": "lewkrnf",
-      "company_Name": "/lkqnrf",
-      "email": "lknef",
-      "contact": "5424",
-      "role": "lwjebnfjl"
+      "id": "8869",
+      "client_Name": "/lwjqnfjlqwg",
+      "company_Name": "k",
+      "email": "jekn@kwnb.ocm",
+      "contact": "8779115457",
+      "role": "Customer"
+    },
+    {
+      "id": "128e",
+      "client_Name": "something",
+      "company_Name": "idk",
+      "email": "ikd@ikf.com",
+      "contact": "354564574",
+      "role": "plumber"
     }
   ]
 }
